@@ -1,24 +1,26 @@
 const quickSort = (arr) => {
   if (arr.length <= 1) {
-    return arr;
+    return arr; // Если массив содержит один элемент или меньше, он уже отсортирован
   }
 
-  const pivot = arr[Math.floor(arr.length / 2)];
-  const left = [];
-  const right = [];
+  const pivot = arr[Math.floor(arr.length / 2)]; // Выбираем опорный элемент
+  const left = []; // Массив для элементов меньше опорного
+  const right = []; // Массив для элементов больше опорного
 
+  // Разделяем массив на подмассивы, меньше и больше опорного элемента
   for (let i = 0; i < arr.length; i++) {
-    if (i === Math.floor(arr.length / 2)) {
+    if (i === Math.floor(arr.length / 2)) { // Пропускаем опорный элемент
       continue;
     }
-    if (arr[i] < pivot) {
+    if (arr[i] < pivot) { // Если элемент меньше опорного, добавляем его в левый массив
       left.push(arr[i]);
-    } else {
+    } else { // Если элемент больше опорного, добавляем его в правый массив
       right.push(arr[i]);
     }
   }
 
+  // Рекурсивно сортируем левый и правый подмассивы и объединяем их с опорным элементом
   return [...quickSort(left), pivot, ...quickSort(right)];
 }
 
-module.exports = { quickSort };
+module.exports = { quickSort }; // Экспортируем функцию для использования в других модулях

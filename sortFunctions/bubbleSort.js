@@ -1,8 +1,11 @@
 const bubbleSort = (arr) => {
   const n = arr.length;
 
+  // Внешний цикл проходит по всем элементам массива
   for (let i = 0; i < n - 1; i++) {
+    // Внутренний цикл проходит по элементам до конца неотсортированной части массива
     for (let j = 0; j < n - i - 1; j++) {
+      // Если текущий элемент больше следующего, меняем их местами
       if (arr[j] > arr[j + 1]) {
         const temp = arr[j];
         arr[j] = arr[j + 1];
@@ -11,7 +14,7 @@ const bubbleSort = (arr) => {
     }
   }
 
-  return arr;
+  return arr; // Возвращаем отсортированный массив
 };
 
-module.exports = { bubbleSort };
+module.exports = { bubbleSort }; // Экспортируем функцию для использования в других модулях

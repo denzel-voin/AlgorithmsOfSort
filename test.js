@@ -1,12 +1,28 @@
 const { selectionSort } = require('./sortFunctions/selectionSort')
 const { quickSort } = require('./sortFunctions/quickSort')
 const { bubbleSort } = require('./sortFunctions/bubbleSort')
+const { insertionSort } = require('./sortFunctions/insertionSort')
+const { gnomeSort } = require('./sortFunctions/gnomeSort')
+const { mergeSort } = require('./sortFunctions/mergeSort')
+const { radixSort } = require('./sortFunctions/radixSort')
+const { shellSort } = require('./sortFunctions/shellSort')
 
-const sortFunctions = {
-  quickSort,
+const quadricSortFunctions = {
   selectionSort,
-  bubbleSort
+  bubbleSort,
+  insertionSort,
+  gnomeSort
 }
+
+const linearSortFunctions = {
+  quickSort,
+  mergeSort,
+  radixSort,
+  shellSort
+}
+
+// const sortFunctions = quadricSortFunctions;
+// const sortFunctions = linearSortFunctions;
 
 const {
   generateRandomArray,
